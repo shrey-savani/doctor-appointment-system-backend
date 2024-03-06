@@ -14,9 +14,11 @@ dotenv.config({
 connectDb();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://doctor-appointment-system-frontend.vercel.app',
+}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../client/build/index.html")))
+// app.use(express.static(path.join(__dirname, "../client/build/index.html")))
 app.get("/", (req, res) => {
     res.status(200).send({
         message: "server is running"
