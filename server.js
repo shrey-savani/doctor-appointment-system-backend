@@ -15,7 +15,7 @@ connectDb();
 
 const app = express();
 app.use(cors({
-    origin: 'https://doctor-appointment-system-frontend.vercel.app',
+    origin: ['https://doctor-appointment-system-frontend.vercel.app'],
     methods: ["POST", "GET", "PUT", "DELETE"]
 }));
 app.use(express.json());
